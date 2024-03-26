@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="#about-us">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="grid">
+            <section class="profile-card">
+                <h2>Hello, {{ name }}!</h2>
+                <div class="profile-info" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin: 10px; padding: 20px;">
+                    <h5>Username</h5>
+                    <p>{{ username }}</p>
+                </div>
+                <div class="profile-info" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin: 10px; padding: 20px;">
+                    <h5>Email</h5>
+                    <p>{{ email }}</p>
+                </div>
+                <div class="profile-info" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin: 10px; padding: 20px;">
+                    <h5>Years of experience</h5>
+                    <p>{{ experience }}</p>
+                </div>
+                <div class="profile-info" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin: 10px; padding: 20px;">
+                    <h5>Job title</h5>
+                    <p>{{ designation }}</p>
+                </div>
+                <div class="profile-info" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); margin: 10px; padding: 20px;">
+                    <h5>Skills</h5>
+                    <p>{{ skills }}</p>
+                </div>
+                <div class="profile-info">
+                    <button onclick="location.href='/recommend_jobs?skills={{ skills }}&designation={{ designation }}&experience={{ experience }}'" class="btn btn-primary">Recommend jobs for me</button>
+                </div>
+                
+            </section>
+        </div>
+    </main>
+</body>
+</html>

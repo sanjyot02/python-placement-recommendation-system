@@ -1,0 +1,56 @@
+
+Creating companies table
+
+
+create table companies(company_id int primary key, company_pwd varchar(20), company varchar(40), domain varchar(40));
+
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10001, 'tatacons', 'Tata Consultancy Services', 'tcs.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10002, 'infosys', 'Infosys', 'infosys.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10003, 'wipro', 'Wipro', 'wipro.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10004, 'hcltech', 'Hcl Technologies', 'hcltech.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10005, 'techmahi', 'Tech Mahindra', 'techmahindra.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10006, 'mphasis', 'Mphasis', 'mphasis.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10007, 'ltinfo', 'L&T Infotech', 'lntinfotech.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10008, 'accenture', 'Accenture', 'accenture.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10009, 'hexaware', 'Hexaware Technologies', 'hexaware.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10010, 'cognizant', 'Cognizant', 'cognizant.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10011, 'capgemini', 'Capgemini', 'capgemini.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10012, 'rolta', 'Rolta', 'rolta.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10013, '3iinfo', '3I Infotech', '3i-infotech.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10014, 'itcinfo', 'Itc Infotech', 'itcinfotech.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10015, 'sonata', 'Sonata Software', 'sonata-software.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10016, 'oracle', 'Oracle', 'oracle.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10017, 'amdocs', 'Amdocs', 'amdocs.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10018, 'ibm', 'IBM', 'ibm.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10019, 'amazon', 'Amazon', 'amazon.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10020, 'persistent', 'Persistent Systems', 'persistent.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10021, 'concentrix', 'Concentrix', 'concentrix.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10022, 'mindtree', 'LTIMindtree', 'mindtree.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10023, 'birlasoft', 'Birlasoft', 'birlasoft.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10024, 'cybage', 'Cybage', 'cybage.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10025, 'datamatics', 'Datamatics', 'datamatics.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10026, 'zensar', 'Zensar Technologies', 'zensar.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10027, 'hyperlink', 'Hyperlink InfoSystem', 'hyperlinkinfosystem.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10028, 'cisco', 'Cisco', 'cisco.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10029, 'deloitte', 'Deloitte', 'deloitte.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10030, 'sap', 'SAP', 'sap.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10031, 'atos', 'Atos', 'atos.net');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10032, 'microsoft', 'Microsoft Corporation', 'microsoft.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10033, 'godrej', 'Godrej Infotech', 'godrejinfotech.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10034, 'thoughtworks', 'Thoughtworks', 'thoughtworks.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10035, 'collabera', 'Collabera', 'collabera.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10036, 'eclerx', 'eClerx', 'eclerx.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10037, 'zohocorp', 'Zoho Corporation', 'zohocorp.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10038, 'globant', 'Globant', 'globant.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10039, 'epam', 'EPAM Systems', 'epam.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10040, 'fueled', 'Fueled', 'fueled.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10041, 'quesscorp', 'Quess Corp Limited', 'quesscorp.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10042, 'trigyn', 'Trigyn Technologies', 'trigyn.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10043, 'redington', 'Redington India Ltd', 'redingtongroup.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10044, 'hp', 'HP', 'hp.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10045, 'xerox', 'Xerox', 'xerox.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10046, 'unisys', 'Unisys', 'unisys.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10047, 'justdial', 'Just Dial Limited', 'justdial.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10048, 'sifytech', 'Sify Technologies Limited', 'sifycorp.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10049, 'microland', 'Microland Limited', 'microland.com');
+INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10050, 'kpit', 'Kpit', 'kpit.com');

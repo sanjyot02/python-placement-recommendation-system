@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Sign Up</h2>
+                    <h3>Create your account to get started.</h3>
+                </hgroup>
+                <form method="post" action="{{ url_for('signup') }}" class="grid" onsubmit="return validateForm()" name="signupForm" style="display: flex; flex-direction: column; gap: 20px;">
+                    <input type="text" id="username" name="username" placeholder="Create Username" required />
+                    <input type="password" id="password" name="password" placeholder="Create Password" required />
+                    <input type="text" id="name" name="name" placeholder="Enter Name" required />
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required />
+                    <input type="number" id="experience" name="experience" placeholder="Enter Years of Experience" min="0" required />
+                    <input type="text" id="designation" name="designation" placeholder="Enter Job Title" required />
+                    <input type="text" id="skills" name="skills" placeholder="Enter Skills (e.g. Java, Python)" required />
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            </section>
+        </div>
+    </main>
+    <script>
+        window.onload = function() {
+            var error = "{{ error }}";
+            if (error == "username_exists") {
+                alert("Username already exists!");
+            }
+        }
+
+        function validateEmail(email) {
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!re.test(email)) {
+                alert("Invalid email format!");
+                return false;
+            }
+            return true;
+        }
+
+        function validateUsername(username) {
+            if (username.length < 6 || username.length > 20) {
+                alert("Username must be between 6 to 20 characters long!");
+                return false;
+            }
+            if (/\s/.test(username)) {
+                alert("Username should not contain spaces. Use underscores instead!");
+                return false;
+            }
+            if (!/^[a-zA-Z]/.test(username)) {
+                alert("Username should start with an alphabet!");
+                return false;
+            }
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                alert("Username should contain alphanumeric characters and underscores only!");
+                return false;
+            }
+            return true;
+        }
+
+        function validatePassword(password) {
+            if (password.length < 8) {
+                alert("Password must contain minimum 8 characters!");
+                return false;
+            }
+            return true;
+        }
+
+        function validateForm() {
+            var username = document.forms["signupForm"]["username"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var name = document.forms["signupForm"]["name"].value;
+            var email = document.forms["signupForm"]["email"].value;
+            var experience = document.forms["signupForm"]["experience"].value;
+            var designation = document.forms["signupForm"]["designation"].value;
+            var skills = document.forms["signupForm"]["skills"].value;
+
+            if (!validateUsername(username) || !validatePassword(password) || !validateEmail(email)) {
+                return false;
+            }
+            if (username == "" || password == "" || name == "" || email == "" || experience == "" || designation == "" || skills == "") {
+                alert("Please enter all the fields!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

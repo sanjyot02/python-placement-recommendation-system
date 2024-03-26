@@ -1,0 +1,44 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Company</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="#about-us">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h1>{{ company }}</h1>
+                    <h3>{{ domain }}</h3>
+                </hgroup>
+                <br><button id="view-job-postings">View Current Job Postings</button>
+                <br><button id="view-candidates">View Eligible Candidates</button>
+            </section>
+        </div>
+    </main>
+    <script>
+    document.getElementById('view-job-postings').addEventListener('click', function() {
+    window.location.href = "{{ url_for('job_postings') }}";
+    });
+
+    document.getElementById('view-candidates').addEventListener('click', function() {
+    window.location.href = "{{ url_for('candidates') }}";
+    });
+    </script>
+
+</body>
+</html>
+

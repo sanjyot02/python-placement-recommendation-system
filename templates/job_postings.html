@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Job Postings</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="#about-us">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h1>Current Job Postings</h1>
+                    <h3>Here are the current job postings from {{ company }}.</h3>
+                </hgroup><br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><b>Job ID</b></th>
+                            <th><b>Job Title</b></th>
+                            <th><b>Experience</b></th>
+                            <th><b>Key Skills</b></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for job in jobs %}
+                            <tr>
+                                <td>{{ job['job id'] }}</td>
+                                <td>{{ job['Job Title'] }}</td>
+                                <td>{{ job['Job Experience'] }}</td>
+                                <td>{{ job['Key Skills'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

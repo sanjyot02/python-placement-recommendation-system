@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Welcome to Placement Guide</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+     <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h1>Welcome to Placement Guide!</h1>
+                    <h3>Your pathway to successful placements</h3>
+                </hgroup>
+                <p>Our system provides personalized recommendations to help job seekers find the best opportunities that match their skills and aspirations, and assists recruiters in discovering talented candidates perfectly suited for their vacancies.</p>
+
+                <figure>
+                    <img src="https://b2bblogassets.airtel.in/wp-content/uploads/2022/06/startup-company-scaled.jpg" alt="Career Pathways" />
+                </figure>
+                <button id="getStartedBtn" class="primary" style="margin-bottom: 20px;">Get Started</button>
+            </section>
+        </div>
+    </main>
+    <script>
+        document.getElementById('getStartedBtn').addEventListener('click', function() {
+    window.location.href = '{{ url_for('choice') }}';
+});
+    </script>
+
+</body>
+</html>
+ 

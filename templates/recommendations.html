@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
+    <style>
+        .candidate-card {
+            position: relative;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            margin: 10px;
+            padding: 20px;
+        }
+        .card-ids {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="#about-us">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <hgroup>
+        <h1>Job Recommendations</h1>
+        <h3>Here are the recommended jobs based on your job title, experience and skills.</h3>
+        </hgroup><br>
+        <div class="grid">
+            <section>
+                {% if recommendations %}
+                {% if recommendations[0].get('message', None) %}
+                <h5>{{ recommendations[0]['message'] }}</h5>
+                {% else %}
+                <div class="row">
+                    {% for job in recommendations %}
+                    <div class="col-md-6 mb-4">
+                        <div class="candidate-card">
+                            <div class="card-ids">
+                                    <p>Company ID: {{ job['company id'] }}</p>
+                                    <p>Job ID: {{ job['job id'] }}</p>
+                            </div>
+                            <h4>{{ job['Company'] }}</h4>
+                            <p class="card-text">Job Title: {{ job['Job Title'] }}</p>
+                            <p class="card-text">Salary: {{ job['Job Salary'] }}</p>
+                            <p class="card-text">Experience Required: {{ job['Job Experience'] }}</p>
+                            <p class="card-text">Skills Required: {{ job['Key Skills'] }}</p>
+                            <p class="card-text">Industry: {{ job['Industry'] }}</p>
+                            <p class="card-text">Company URL: {{ job['Domain'] }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endif %}
+            </section>
+        </div>
+    </main>
+</body>
+</html>

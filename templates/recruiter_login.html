@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Recruiter Login</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Recruiter Login</h2>
+                    <h3>Please enter your company credentials.</h3>
+                </hgroup>
+                <!-- Update the form action to point to the recruiter_login route and set method to POST -->
+                <form class="grid" action="{{ url_for('recruiter_login') }}" method="post" style="grid-template-columns: 1fr; grid-gap: 20px;">
+                    <input type="number" id="companyid" name="companyid" placeholder="Company ID (5 digit number)" aria-label="Company ID" required />
+                    <input type="password" id="companypassword" name="companypassword" placeholder="Company Password" aria-label="Company Password" required />
+                    <button type="submit">Login</button>
+                </form>
+                </section>
+        </div>
+    </main>
+    <script>
+        window.onload = function() {
+            var error = "{{ error }}";
+            if (error == "id_not_found") {
+                alert('Company ID does not exist!');
+            } else if (error == "incorrect_password") {
+                alert('Incorrect company password!');
+            }
+        }
+    </script>
+</body>
+</html>

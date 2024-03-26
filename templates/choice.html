@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Choice</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+<main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Select your role</h2>
+                    <h3></h3>
+                </hgroup>
+                <div class="buttons" style="text-align: center; margin-top: 20px;">
+                    <br><button id="jobSeekerBtn" class="primary">Job Seeker</button>
+                    <button id="recruiterButton" class="primary">Recruiter</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        document.getElementById('jobSeekerBtn').addEventListener('click', function() {
+            window.location.href = '{{ url_for('login') }}';
+        });
+        document.getElementById('recruiterButton').addEventListener('click', function() {
+            window.location.href = "{{ url_for('recruiter_login') }}";
+        });
+    </script>
+
+</body>
+</html>
+

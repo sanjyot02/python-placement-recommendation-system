@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong><a href="{{ url_for('welcome') }}">Placement Guide</a></strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Login</h2>
+                    <h3>Please enter your credentials.</h3>
+                </hgroup>
+                <form class="grid" style="grid-template-columns: 1fr; grid-gap: 20px;" method="post" action="{{ url_for('login') }}">
+                    <input type="text" id="username" name="username" placeholder="Username" aria-label="Username" required />
+                    <input type="password" id="password" name="password" placeholder="Password" aria-label="Password" required />
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="{{ url_for('signup') }}">Signup here</a></p>
+            </section>
+        </div>
+    </main>
+    <script>
+        window.onload = function() {
+            var error = "{{ error }}";
+            if (error == "username_not_found") {
+                alert('Username does not exist!');
+            } else if (error == "incorrect_password") {
+                alert('Incorrect password!');
+            }
+        }
+    </script>
+</body>
+</html>
