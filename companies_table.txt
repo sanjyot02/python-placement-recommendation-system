@@ -1,7 +1,3 @@
-
-Creating companies table
-
-
 create table companies(company_id int primary key, company_pwd varchar(20), company varchar(40), domain varchar(40));
 
 INSERT INTO companies (company_id, company_pwd, company, domain) VALUES (10001, 'tatacons', 'Tata Consultancy Services', 'tcs.com');
