@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 # Database configuration
-DATABASE_URL = "postgresql://postgres:project@localhost:5432/placement"
+DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/placement"
 
 def create_db_connection():
     try:
@@ -125,7 +125,7 @@ def signup():
         designation = request.form['designation']
         skills = request.form['skills']
 
-        hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
         conn = create_db_connection()
         if conn:
