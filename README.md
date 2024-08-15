@@ -1,11 +1,17 @@
 
 # python-placement-recommendation-system
 
-A simple job recommendation system project (using Python) for my final year!
+A simple recommendation system project using Python, for my BSc Computer Science final year!
 
 
 #### Scope of the system
-This project is a Flask-based web application designed for both job seekers and recruiters. Users can sign up, log in, and receive personalized job recommendations based on their skills, experience, and job title. Recruiters can log in to view job listings and the list of candidates recommended for their job postings. The application provides a user-friendly platform and aims to streamline the job placement and recruitment process for both job seekers and recruiters.
+This project is a simple Flask-based web application designed for both job seekers and recruiters. 
+
+Users can:
+sign up, log in, and receive job recommendations based on their skills, experience, and job title.
+
+Recruiters can:
+log in to view job listings and the list of candidates recommended for their job postings.
 
 #### Software Requirements
 - Frontend: HTML, CSS, JavaScript
@@ -14,9 +20,6 @@ This project is a Flask-based web application designed for both job seekers and 
 - Operating System: Linux
 - Data Science: Python libraries (Pandas, NumPy, Scikit-learn) for the recommendation algorithm.
 
-#### Hardware Requirements
-- Standard personal computer or laptop.
-
 #### Files Included
 - app.py: The main Flask application code.
 - jobs1.py: The Python code containing the job recommendation logic.
@@ -24,7 +27,7 @@ This project is a Flask-based web application designed for both job seekers and 
 - companies_table.txt: Contains the SQL statements to manually create the ‘companies’ table and insert 50 companies values including company_id, company_pwd, company and domain.
 - templates: The directory containing the HTML templates.
 
-### Operational Instructions
+### Steps to execute
 
 1. Setting up the Environment:
 - Ensure you have Python installed on your system.
@@ -39,7 +42,6 @@ pip install flask psycopg2-binary pandas scikit-learn numpy werkzeug
 ```bash
 CREATE DATABASE placement;
 ```
-- Also change your postgres password to 'project'.
 - After creating the database, you need to create the 'companies' table manually as follows:
   - Copy the SQL statements provided in 'companies_table.txt'.
   - Paste them into your SQL client or command line interface connected to your PostgreSQL database.
